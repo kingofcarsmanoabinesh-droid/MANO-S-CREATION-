@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Study Scheduler</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    main {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #4facfe;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #2f80ed;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      padding: 10px;
+      border: 1px solid #ddd;
+      text-align: center;
+    }
+    th {
+      background: #f0f0f0;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #222;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Student Study Scheduler</h1>
+  <p>Plan smart. Study better. Succeed faster.</p>
+</header>
+
+<main>
+  <div class="card">
+    <h2>Add Study Task</h2>
+    <label>Subject</label>
+    <input type="text" id="subject" placeholder="Eg: Mathematics">
+
+    <label>Day</label>
+    <select id="day">
+      <option>Monday</option>
+      <option>Tuesday</option>
+      <option>Wednesday</option>
+      <option>Thursday</option>
+      <option>Friday</option>
+      <option>Saturday</option>
+      <option>Sunday</option>
+    </select>
+
+    <label>Time</label>
+    <input type="time" id="time">
+
+    <button onclick="addTask()">Add to Schedule</button>
+  </div>
+
+  <div class="card">
+    <h2>Weekly Study Schedule</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Day</th>
+          <th>Subject</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <tbody id="schedule"></tbody>
+    </table>
+  </div>
+
+  <div class="card">
+    <h2>Study Tips</h2>
+    <ul>
+      <li>📌 Study in short focused sessions</li>
+      <li>📌 Revise daily</li>
+      <li>📌 Avoid distractions</li>
+      <li>📌 Sleep well before exams</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Student Study Scheduler</p>
+</footer>
+
+<script>
+  function addTask() {
+    const subject = document.getElementById('subject').value;
+    const day = document.getElementById('day').value;
+    const time = document.getElementById('time').value;
+
+    if (!subject || !time) {
+      alert('Please fill all fields');
+      return;
+    }
+
+    const table = document.getElementById('schedule');
+    const row = table.insertRow();
+    row.insertCell(0).innerText = day;
+    row.insertCell(1).innerText = subject;
+    row.insertCell(2).innerText = time;
+
+    document.getElementById('subject').value = '';
+    document.getElementById('time').value = '';
+  }
+</script>
+
+</body>
+</html>
