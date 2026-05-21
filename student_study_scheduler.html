@@ -7,25 +7,25 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 3;
+      margin: 0;
       background: #f4f6f8;
-      color: #777;
+      color: #333;
     }
     header {
       background: linear-gradient(135deg, #4facfe, #00f2fe);
-      color: black;
-      padding: 60px;
+      color: white;
+      padding: 20px;
       text-align: center;
     }
     main {
-      padding: 60px;
-      max-width: 690px;
+      padding: 20px;
+      max-width: 1000px;
       margin: auto;
     }
     .card {
-      background: gold;
+      background: white;
       padding: 20px;
-      margin-bottom: 50px;
+      margin-bottom: 20px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
@@ -42,11 +42,11 @@
     }
     button {
       background: #4facfe;
-      color: gold;
+      color: white;
       border: none;
       cursor: pointer;
       margin-top: 15px;
-      font-size: 15px;
+      font-size: 16px;
     }
     button:hover {
       background: #2f80ed;
@@ -65,7 +65,7 @@
       background: #f0f0f0;
     }
     footer {
-      text-align: right;
+      text-align: center;
       padding: 15px;
       background: #222;
       color: #aaa;
@@ -80,13 +80,13 @@
 </header>
 
 <main>
-  <div class="CARD">
+  <div class="card">
     <h2>Add Study Task</h2>
     <label>Subject</label>
-    <input type="text" id="Topic" placeholder="Eg: Mathematics">
+    <input type="text" id="subject" placeholder="Eg: Mathematics">
 
     <label>Day</label>
-    <select id="Day">
+    <select id="day">
       <option>Monday</option>
       <option>Tuesday</option>
       <option>Wednesday</option>
@@ -97,7 +97,7 @@
     </select>
 
     <label>Time</label>
-    <input type="Time" id="time">
+    <input type="time" id="time">
 
     <button onclick="addTask()">Add to Schedule</button>
   </div>
@@ -119,10 +119,10 @@
   <div class="card">
     <h2>Study Tips</h2>
     <ul>
-      <li>📌 Study in Short Focused Sessions</li>
-      <li>📌 Revise Daily</li>
-      <li>📌 Avoid Distractions</li>
-      <li>📌 Sleep Well Before Exams</li>
+      <li>📌 Study in short focused sessions</li>
+      <li>📌 Revise daily</li>
+      <li>📌 Avoid distractions</li>
+      <li>📌 Sleep well before exams</li>
     </ul>
   </div>
 </main>
@@ -148,7 +148,7 @@
     row.insertCell(1).innerText = subject;
     row.insertCell(2).innerText = time;
 
-    document.getElementById('Topic').value = '';
+    document.getElementById('subject').value = '';
     document.getElementById('time').value = '';
   }
 </script>
